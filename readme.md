@@ -7,7 +7,7 @@ Table of Contents
 - [Requirements](#requirements)
   * [Operating systems](#operating-systems)
 - [Installation](#installation)
-- [Role Variables](#role-variables)
+- [Catalog Variables](#catalog-variables)
 - [Examples](#examples)
   * [Scenarios](#scenarios)
   * [Simple Example](#simple-example)
@@ -51,7 +51,7 @@ cd centreon-iac-puppet-configurator
 
 Coming soon
 
-# Role Variables
+# Catalog Variables
 
 * `centreon_webapi_host`: Host or ip to connect in WebAPI
 * `centreon_webapi_port`: TCP port to connect in WebAPI
