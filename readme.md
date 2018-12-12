@@ -93,7 +93,7 @@ Sample values for the variable `configuration`:
 
 ## Scenarios
 
-You can create playbooks to add a set of objects directly to Centreon, or you can create the objects into separate catalogs for each host you add using Puppet.
+You can create catalogs to add a set of objects directly to Centreon, or you can create the objects into separate catalogs for each host you add using Puppet.
 
 For example, to create a host with a webserver service with Nginx, you can have a catalog as defined [here: deploy-nginx.pp](docs/examples/deploy-nginx.pp)
 
@@ -107,7 +107,7 @@ For example, to create a host with a webserver service with Nginx, you can have 
 
 ![wrapper diagram](docs/img/wrapper_with_proxy.png)
 
-We may have a situation where Puppet may not have access directly to Centreon, only through a host that is located between the Ansible network and the DMZ where the Centreon is located. For these scenarios, you will either have to use a specific host or use the services client that Centreon will monitor.
+We may have a situation where Puppet may not have access directly to Centreon, only through a host that is located between the Puppet network and the DMZ where the Centreon is located. For these scenarios, you will either have to use a specific host or use the services client that Centreon will monitor.
 
 # Screencasts
 
