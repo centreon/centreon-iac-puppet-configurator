@@ -6,8 +6,12 @@ class centreon::config (
   String $centreon_webapi_host    = 'http://localhost',
   String $centreon_webapi_port    = '80',
   String $centreon_admin_password = 'p4ssw0rd',
-  YAML   $configuration           = undef
+  Hash   $configuration           = undef
 ) {
+
+  if $configuration == undef {
+    fail ('FATAL - You must set values in the variable *configuration*')
+  }
 
   if $::operatingsystem == 'Centos' and $::operatingsystemmajrelease in [7] {
 
@@ -30,7 +34,7 @@ class centreon::config (
 
     # Create file config
     file { '/tmp/config.yml':
-      content => template('centreon/wrapper-config.yml.erb'),
+      content => inline_template('<%= @configuration.to_yaml %>'),
       mode    => '0644',
       require => File['/tmp/wrapper.py']
     }
